@@ -1,0 +1,283 @@
+<section class="hero is-medium">
+    <div class="hero-body">
+      <div class="container">
+          <div class="tile is-ancestor" >
+              <div class="tile is-parent">
+                <!-- Add content or other tiles -->
+                <form [formGroup]="Details" (ngSubmit)=" onDetails_Submit()">
+                  <div class="tile is-child box notification ">
+                    <h4 class="heading">ENTER DETAILS:</h4>
+                      
+                      <div class="field">
+                        <label class="label">NAME:</label>
+                        <div class="control">
+                          <input class="input is-success" type="text" placeholder="Text input" formControlName="name">
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">USERNAME:</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input class="input is-success" type="text" placeholder="please enter unique username" formControlName="username">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                          </span>
+                          <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">EMAIL:</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input class="input is-success" type="email" placeholder="hello@" formControlName="email">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">UNIQUE NAME FOR DATABASE:</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input class="input is-success" type="email" placeholder="OPTIONAL" formControlName="databasename">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                        </div>
+                      </div>                 
+                      <div class="field is-grouped">
+                        <div class="control">
+                          <button class="button is-primary is-outlined is-light" type="submit" [disabled]="!Details.valid">Submit</button>
+                        </div>
+                        <div class="control">
+                          <button class="button is-danger is-outlined is-light" type="reset">Refresh</button>
+                        </div>
+                      </div>
+                  </div>
+                </form>
+              </div>
+                        
+              <div class="tile is-parent">
+                <!-- Add content or other tiles -->
+                <div class="tile is-child box notification ">
+                  <h4 class="heading">Lets Set Parameters:-</h4>
+                  <div class="field">
+                    <label class="label">Weights For Classifier:</label>
+                  </div>
+                    <div class="field">
+                      <label class="label">LR:</label>                                                   
+                      <div class="control">
+                        <input class="input is-danger" type="text" placeholder="0-100"> 
+                        <div class="control">
+                          <button class="button is-primary is-outlined is-light" style="margin-top: 5px;" (click)="show('LR')">Submit</button>
+                        </div>
+                        <div *ngIf ="model === 'LR'" >
+                          <div class="field">
+                            <label class="label">BATCH-SIZE:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 64">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">LEARNING-RATE:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 0.0001">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">NUMBER OF EPOCHS:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 25">
+                            </div>
+                          </div>
+                        </div>                   
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Transformers:</label>
+                      <div class="control">
+                        <input class="input is-danger" type="text" placeholder="0-100">
+                        <div class="control">
+                          <button class="button is-primary is-outlined is-light" style="margin-top: 5px;" (click)="show('TR')">Submit</button>
+                        </div>
+                        <div *ngIf ="model === 'TR'" >
+                          <div class="field">
+                            <label class="label">BATCH-SIZE:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 64">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">LEARNING-RATE:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 0.0001">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">NUMBER OF EPOCHS:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 25">
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">CNN:</label>
+                      <div class="control">
+                        <input class="input is-danger" type="text" placeholder="0-100">
+                        <div class="control">
+                          <button class="button is-primary is-outlined is-light" style="margin-top: 5px;" (click)="show('CNN')">Submit</button>
+                        </div>
+                        <div *ngIf ="model === 'CNN'" >
+                          <div class="field">
+                            <label class="label">BATCH-SIZE:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 64">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">LEARNING-RATE:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 0.0001">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">NUMBER OF EPOCHS:</label>
+                            <div class="control">
+                              <input class="input is-danger" type="text" placeholder="eg. 25">
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+              
+
+                  <label class="label">Review the fields and press submit:</label>
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button class="button is-primary is-outlined is-light" (click)="show('xyz')">Submit</button>
+                      </div>
+                      <div class="control">
+                        <button class="button is-danger is-outlined is-light" (click)="onselectrefresh()">Retrain</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="tile is-parent">
+                <!-- Add content or other tiles -->
+                
+                <div class="tile is-child box notification ">
+                  <form>
+                  <div class="field">
+                    <div class="control">
+                      <label class="heading">SELECT NUMBER OF FOLDERS AND EMAIL-FILE-TYPE:</label>
+                      <div>
+                          <div class="select">
+                            <select (change)="generate_folder($event)">
+                              <option value=0>Select</option>
+                              <option value=2>Two</option>
+                              <option value=3>Three</option>
+                              <option value=4>Four</option>
+                              <option value=5>Five</option>
+                              <option value=6>Six</option>
+                              <option value=7>Seven</option>
+                              <option value=8>Eight</option>
+                              <option value=9>Nine</option>
+                              <option value=10>Ten</option>
+                            </select>
+                          </div>
+                          <div class="select file-type">
+                            <select (change)="file_type($event)">
+                              <option value="false">email-type</option>
+                              <option value="msg">MSG</option>
+                              <option value="eml" [disabled]="true">EML</option>
+                            </select>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 class="heading">RENAME YOUR FOLDERS AND UPLOAD EMAILS:</h4>
+                  <div *ngIf="folder_generated">
+                    <div *ngFor="let Folder of Folders_generated">
+                      <div class="field">
+                        <label class="label">{{this.Folder.names}}</label>
+                        <div class="field is-grouped">
+                          <div class="control">
+                            <button class="button is-primary is-outlined is-light" (click)="rename()">Rename</button>
+                          </div>
+                          <div class="file">
+                            <label class="file-label">
+                              <input class="file-input" type="file" multiple (change)="uploadFile($event,this.Folder.id)">
+                              <span class="file-cta">
+                                <span class="file-icon">
+                                  <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                  Choose files…
+                                </span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div *ngIf= "folder_rename " class="control">
+                          <input class="input" type="text" placeholder="Loading input" [(ngModel)]="this.Folder.names" [ngModelOptions]="{standalone: true}">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <h2 class="heading" style= "font-size: 15px;align-content: center;">
+                        Press "ctrl" key while selecting emails for multiple selection.
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <button class="button is-primary is-outlined is-light" (click)="onfoldersubmit()" [disabled]="Folders_submit()">Submit</button>
+                    </div>
+                    <div class="control">
+                      <button class="button is-danger is-outlined is-light" (click)="onselectrefresh()" type="reset">Refresh</button>
+                    </div>
+                  </div>
+                  </form>
+                </div>  
+              </div>
+          </div>
+          <div class="buttons">
+            <label class="heading" style="color: black;">
+              VERIFY ALL DETAILS AND PRESS TRAIN:
+            </label>
+            <button class="button is-medium is-primary is-light One" (click)="OnTrain()"><b>TRAIN</b></button>
+          </div>
+          <div class="buttons">
+            <label class="heading" style="color: black;">
+              TO RETRAIN:
+            </label>
+            <button class="button is-medium is-danger is-light One" (click)="reloadPage()"><b>RETRAIN</b></button>
+          </div>
+      </div>
+    </div>
+</section>
+<!--show on train click-->
+<section *ngIf="model === 'true'" class="hero is-medium two">
+  <div class="hero-body">
+    <H1 class="heading" style="font-size: 48px;">QUICK TESTING RESULTS:</H1>
+    <div class="tile is-ancestor"> 
+      <div class="tile is-parent is-4" style="align-content: center;">
+        <div class="tile is-child notification box two" >
+            <label class="label" style="color: black; font-weight: 400;">TRAINING WAS SUCCESSFUL!! <br> CONGRATULATIONS!!</label>
+            <i class="fa fa-check fa-7x" style="color:#000851; align-self: center;" aria-hidden="true" ></i>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="tile is-child notification box two">
+          <label class="label" style="color: black; font-weight: 400;">ACCURACY OF THE CURRENT MODEL IS <B>96%</B> <br> RETRAIN MODEL TO CHANGE IT!</label>
+          <label class="label" style="color: black; font-weight: 400;">email1.eml  :  FOLDER1</label>
+          <label class="label" style="color: black; font-weight: 400;">email2.eml  :  FOLDER2</label>
+          <button class="button is-medium is-primary is-light One" >save</button>
+        </div>
+      </div>
+    </div>
+
+  <!--table-5 emails --their category-->
+  </div>
+</section>

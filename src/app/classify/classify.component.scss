@@ -1,0 +1,16 @@
+.hero.is-medium {
+    background: #1CB5E0
+    }
+.tile.is-ancestor.box.notification {
+    background: #000851;
+    border-color: whitesmoke !important;
+    border-width: 1px;
+    transition: transform .2s ease-in-out;
+    }
+.tile.is-ancestor.box.notification:hover{
+    transform: scale(1.025);
+    }
+.heading{
+    font-size:28px ;
+    color:whitesmoke
+    }
