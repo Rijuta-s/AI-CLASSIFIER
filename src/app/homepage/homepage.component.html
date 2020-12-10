@@ -66,10 +66,7 @@
                     <div class="field">
                       <label class="label">LR:</label>                                                   
                       <div class="control">
-                        <input class="input is-danger" type="text" placeholder="0-100"> 
-                        <div class="control">
-                          <button class="button is-primary is-outlined is-light" style="margin-top: 5px;" (click)="show('LR')">Submit</button>
-                        </div>
+                        <input class="input is-danger" type="text" placeholder="0-100" (click)="show('LR')"> 
                         <div *ngIf ="model === 'LR'" >
                           <div class="field">
                             <label class="label">BATCH-SIZE:</label>
@@ -95,10 +92,7 @@
                     <div class="field">
                       <label class="label">Transformers:</label>
                       <div class="control">
-                        <input class="input is-danger" type="text" placeholder="0-100">
-                        <div class="control">
-                          <button class="button is-primary is-outlined is-light" style="margin-top: 5px;" (click)="show('TR')">Submit</button>
-                        </div>
+                        <input class="input is-danger" type="text" placeholder="0-100" (click)="show('TR')">
                         <div *ngIf ="model === 'TR'" >
                           <div class="field">
                             <label class="label">BATCH-SIZE:</label>
@@ -124,10 +118,7 @@
                     <div class="field">
                       <label class="label">CNN:</label>
                       <div class="control">
-                        <input class="input is-danger" type="text" placeholder="0-100">
-                        <div class="control">
-                          <button class="button is-primary is-outlined is-light" style="margin-top: 5px;" (click)="show('CNN')">Submit</button>
-                        </div>
+                        <input class="input is-danger" type="text" placeholder="0-100" (click)="show('CNN')">
                         <div *ngIf ="model === 'CNN'" >
                           <div class="field">
                             <label class="label">BATCH-SIZE:</label>
@@ -150,9 +141,6 @@
                         </div> 
                       </div>
                     </div>
-              
-
-                  <label class="label">Review the fields and press submit:</label>
                     <div class="field is-grouped">
                       <div class="control">
                         <button class="button is-primary is-outlined is-light" (click)="show('xyz')">Submit</button>

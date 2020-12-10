@@ -1,12 +1,22 @@
 <section class="hero is-medium">
     <div class="hero-body">
       <div class="container">
-            <div class="tile is-ancestor box notification">
-              <h4 class="heading">UPLOAD ALL THE EMAILS THAT ARE TO BE ClASSIFIED:
-                <button class="button is-primary is-light is-medium"><B>UPLOAD</B></button>
-              </h4>
+          <div class="tile is-ancestor box notification">
+              <h4 class="heading">UPLOAD ALL THE EMAILS THAT ARE TO BE ClASSIFIED:</h4>
+                <div class="field is-grouped"><label class="file file-label">
+                  <button class="button is-primary is-light is-medium" >
+                    <input class="file-input" type="file" multiple (change)="uploadFile($event)">
+                    <B>UPLOAD</B>
+                  </button>
+                </label>
+                <label class="file file-label">
+                  <button class="button is-primary is-light is-medium" type="submit" [disabled]="!filesuploaded">
+                    <B>SUBMIT</B>
+                  </button>
+                </label>
+              </div>
 
-            </div>
+          </div>
       </div>
     </div>
 </section>
